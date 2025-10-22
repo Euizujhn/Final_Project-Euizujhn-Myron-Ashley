@@ -1,5 +1,31 @@
-public class RecipeFormat {
+
     //Creates Format to String from food store class
 
-    //Get From Food store
+package org.example;
+
+import org.json.simple.JSONObject;
+
+import java.util.Scanner;
+
+public class RecipeFormat extends RecipeAPI {
+public static String Ingredients(String FoodKey){
+        try {
+            JSONObject FoodIngredients = getRecentChange(FoodKey);
+            String empty = "";
+
+            for (int i = 1; i <= 20; i++){
+                String List = (String) FoodIngredients.get("strIngredient" + i);
+                String Measure = (String) FoodIngredients.get("strMeasure" + i);
+                String combine =  List + ": " + Measure;
+                System.out.println(combine);
+                if (List.equals(empty)){
+                    return combine;
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
