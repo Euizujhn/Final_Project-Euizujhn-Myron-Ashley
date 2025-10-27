@@ -1,7 +1,7 @@
 package org.example;
 
-public class APP {
-    //Launches code from other classes
-
-    //Get from SearcherGUI
+public class APP extends SearcherGUI{
+    public static void main(String[] args) {
+        launch(args);
+    }
 }
