@@ -1,0 +1,20 @@
+package org.example;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class FoodSearcher extends RecipeFormat {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter Food for Ingredients");
+        String food = input.nextLine();
+        System.out.println("====================");
+        System.out.println("NEEDED INGREDIENTS");
+        System.out.println(Ingredients(food));
+    }
+
+
+
+}
+
+
