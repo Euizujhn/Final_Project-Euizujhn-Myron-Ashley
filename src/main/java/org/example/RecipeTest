@@ -1,0 +1,65 @@
+package org.example;
+
+import org.json.simple.JSONObject;
+
+public class RecipieTest extends RecipeAPI{
+    public static boolean IngredientsTest1(String FoodKey){
+        try {
+            JSONObject FoodIngredients = getFoodInfo(FoodKey);
+            String List = (String) FoodIngredients.get("strIngredient" + 1);
+            if (List.equals("Potatoes")){
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception e) {
+            System.err.println("Wrong");
+            return false;
+        }
+    }
+
+    public static boolean IngredientsTest2(String FoodKey){
+        try {
+            JSONObject FoodIngredients = getFoodInfo(FoodKey);
+            String List = (String) FoodIngredients.get("strMeasure" + 1);
+            if (List.equals("225g new")){
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception e) {
+            System.err.println("Wrong");
+            return false;
+        }
+    }
+
+    public static boolean IngredientsTest3(String FoodKey){
+        try {
+            JSONObject FoodIngredients = getFoodInfo(FoodKey);
+            String List = (String) FoodIngredients.get("strIngredient" + 1);
+            if (List.equals("onions")){
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception e) {
+            System.err.println("Wrong");
+            return false;
+        }
+    }
+
+    public static boolean IngredientsTest4(String FoodKey){
+        try {
+            JSONObject FoodIngredients = getFoodInfo(FoodKey);
+            String List = (String) FoodIngredients.get("strMeasure" + 1);
+            if (List.equals("2")){
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception e) {
+            System.err.println("Wrong");
+            return false;
+        }
+    }
+}
