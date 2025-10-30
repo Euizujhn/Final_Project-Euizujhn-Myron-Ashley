@@ -27,6 +27,18 @@ public class RecipeFormat extends RecipeAPI {
         return null;
     }
 
+    public static String Instructions(String FoodKey){
+      try {
+        JSONObject FoodInformation = getFoodInfo(FoodKey);
+      String instructions = (String) FoodInformation.get("strInstructions");
+    return instructions;
+    } catch (Exception e) {
+     // e.printStackTrace();
+    }
+    return null;
+    }
+
+
     public static String IngredientsGUI(String FoodKey){
         try{
             JSONObject FoodIngredients = getFoodInfo(FoodKey);
